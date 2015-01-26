@@ -7,6 +7,8 @@ Create beautiful animated panorama views. Inspired by the LinkedIn iOS app.
 
 Perfect for intro views or background views.
 
+ <img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/PanoramaViewDemo.gif" width = "320px"> 
+
 <h1> Installation </h1>
 
 Simply add the 'SKPanoramaView' folder into your project and ``import "SKPanoramaView.h"`` and you're good to go.
