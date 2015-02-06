@@ -1,5 +1,5 @@
 # SKPanoramaView
-Create beautiful animated panorama views. Inspired by the LinkedIn iOS app.
+Create beautiful animated panorama views. Inspired by the intro on the LinkedIn iOS app.
 
 <b> Features </b>
 - Adapts to any image - Automatically sets the panorama view based on the dimensions of the image.
@@ -30,4 +30,4 @@ panoramaView.animationDuration = 15.0f; //15 seconds (Default: 10s)
 For more help on how to do this, check out the <a href = "https://github.com/sachinkesiraju/SKPanoramaView/tree/master/SKPanoramaViewDemo"> Demo </a>.
 
 <h1> License </h1>
-SKPanoramaView is available under the MIT License. For more information, see the LICENSE file.
+SKPanoramaView is available under the MIT License. For more information, see the <a href ="https://github.com/sachinkesiraju/SKPanoramaView/blob/master/LICENSE">LICENSE </a> file.
