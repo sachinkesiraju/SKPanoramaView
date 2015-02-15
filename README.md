@@ -7,7 +7,7 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
- <img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/PanoramaViewDemo.gif" width = "320px"> 
+ <img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Example%20GIFs/linkedin.gif" width = "320px"> 
 
 <h1> Installation </h1>
 
@@ -29,5 +29,7 @@ panoramaView.animationDuration = 15.0f; //15 seconds (Default: 10s)
 
 For more help on how to do this, check out the <a href = "https://github.com/sachinkesiraju/SKPanoramaView/tree/master/SKPanoramaViewDemo"> Demo </a>.
 
+ <img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Example%20GIFs/PanoramaViewDemo.gif" width = "320px"> 
+ 
 <h1> License </h1>
 SKPanoramaView is available under the MIT License. For more information, see the <a href ="https://github.com/sachinkesiraju/SKPanoramaView/blob/master/LICENSE">LICENSE </a> file.
