@@ -1,18 +1,18 @@
 //
-//  PanoramaView.m
+//  SKPanoramaView.m
 //  SKPanoramaView
 //
 //  Created by Sachin Kesiraju on 1/5/15.
 //  Copyright (c) 2015 Sachin Kesiraju. All rights reserved.
 //
 
-#import "PanoramaView.h"
+#import "SKPanoramaView.h"
 
 static const CGFloat SKRotationMinimumTreshold = 0.1f;
 static const CGFloat SKAnimationUpdateInterval = 1 / 100;
 static const CGFloat SKPanoramaRotationFactor = 4.0f;
 
-@interface PanoramaView ()
+@interface SKPanoramaView ()
 
 @property (nonatomic, assign) CGRect viewFrame;
 
@@ -27,7 +27,7 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
 
 @end
 
-@implementation PanoramaView
+@implementation SKPanoramaView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

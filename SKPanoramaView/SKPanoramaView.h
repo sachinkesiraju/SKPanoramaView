@@ -1,5 +1,5 @@
 //
-//  PanoramaView.h
+//  SKPanoramaView.h
 //  SKPanoramaView
 //
 //  Created by Sachin Kesiraju on 1/5/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PanoramaView : UIView
+@interface SKPanoramaView : UIView
 
 @property (strong, nonatomic) UIImage *image;
 @property (nonatomic) CGFloat animationDuration; //Duration of one image animation (Default: 10s)
