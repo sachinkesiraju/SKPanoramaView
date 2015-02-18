@@ -103,7 +103,6 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
         CGFloat offsetX = _scrollView.contentOffset.x - rotationRate * _motionRate;
         if (offsetX > _maximumXOffset) {
             offsetX = _maximumXOffset;
-            NSLog(@"Setting max offset");
         } else if (offsetX < _minimumXOffset) {
             offsetX = _minimumXOffset;
         }
