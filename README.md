@@ -10,8 +10,13 @@ Perfect for intro views or background views.
  <img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Example%20GIFs/linkedin.gif" width = "320px"> 
 
 <h1> Installation </h1>
-
-Simply add the 'SKPanoramaView' folder into your project and ``import "SKPanoramaView.h"`` and you're good to go.
+<h3> Cocoapods </h3>
+SKPanoramaView is available through <a href = "cocoapods.org"> Cocoapods</a>. To install it, simply add the following to your Podfile.
+```
+pod 'SKPanoramaView'
+```
+<h3> Alternative </h3>
+Alternatively, you can always just drag and drop the folder 'SKPanoramaView' into your project and ``#import "SKPanoramaView.h"`` and you're good to go.
 
 <h2> Implementation </h2>
 
