@@ -24,7 +24,7 @@
 - (void) showLinkedinAnimation
 {
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"new york"]];
-    panoramaView.animationDuration = 100;
+    panoramaView.animationDuration = 60;
     [self.view addSubview:panoramaView];
     [panoramaView startAnimating];
     UIView *overlayView = [[UIView alloc] initWithFrame:self.view.frame];
