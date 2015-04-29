@@ -92,8 +92,9 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
         _animationDuration = 10.0f; //Default
     }
     
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
     _timer = [NSTimer timerWithTimeInterval:SKAnimationUpdateInterval target:self selector:@selector(monitor) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
 }
 
 - (void) monitor
