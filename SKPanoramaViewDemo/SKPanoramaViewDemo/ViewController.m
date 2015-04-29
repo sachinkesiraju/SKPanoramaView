@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib
-    //[self showLinkedinAnimation];
+    //[self showLinkedinAnimation]; //Don't uncomment without removing code from viewDidAppear/disappear methods
 }
 
 - (void) viewDidAppear:(BOOL)animated
