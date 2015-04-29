@@ -7,7 +7,7 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
-<img src = "https://www.dropbox.com/s/1l5n4jgqszdgq76/linkedin.gif?dl=0" width = "320px">
+<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/linkedin.gif" width = "320px">
 
 <h1> Installation </h1>
 <h3> Cocoapods </h3>
