@@ -7,7 +7,9 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
-<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/linkedin.gif" width = "320px">
+<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Demo%20GIFs/PanoramaViewDemo.gif" width = "320px">
+
+Note: Demos are significantly slower on the gifs than on an actual simulator
 
 <h1> Installation </h1>
 <h3> Cocoapods </h3>
@@ -30,6 +32,24 @@ SKPanoramaView is super easy to implement. Just add the following lines of code 
 Optionally, you can set the animation duration of the view as follows:
 ```
 panoramaView.animationDuration = 15.0f; //15 seconds (Default: 10s)
+```
+Subviews can easily be added to the panorama view to create the effect as shown below
+
+<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Demo%20GIFs/linkedin.gif" width = "320px">
+
+By simply using:
+```
+    SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"new york"]];
+    panoramaView.animationDuration = 60;
+    [self.view addSubview:panoramaView];
+    [panoramaView startAnimating];
+    UIView *overlayView = [[UIView alloc] initWithFrame:self.view.frame];
+    overlayView.backgroundColor = [UIColor blackColor];
+    overlayView.alpha = 0.4;
+    [panoramaView addSubview:overlayView];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"linkedin"]];
+    imageView.center = panoramaView.center;
+    [panoramaView addSubview:imageView];
 ```
 
 For more help on how to do this, check out the <a href = "https://github.com/sachinkesiraju/SKPanoramaView/tree/master/SKPanoramaViewDemo"> Demo </a>.
