@@ -11,34 +11,20 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) SKPanoramaView *panView;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib
-    //[self showLinkedinAnimation]; //Don't uncomment without removing code from viewDidAppear/disappear methods
-}
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    _panView= [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"golden gate"]];
-    _panView.animationDuration = 10.0f; //Set the duration
-    [self.view addSubview:_panView];
-
-    [_panView startAnimating];
-}
-
-- (void) viewDidDisappear:(BOOL)animated
-{
-    [_panView stopAnimating];
+    [self showStandardAnimation];
+    // [self showLinkedinAnimation]; //uncomment standardAnimation before calling this to avoid to instances of panorama view running at once.
 }
 
 - (void) showLinkedinAnimation
 {
+    //demo adding custom views on top of panorama view
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"new york"]];
     panoramaView.animationDuration = 60;
     [self.view addSubview:panoramaView];
@@ -54,6 +40,7 @@
 
 - (void) showStandardAnimation
 {
+    //standard demo
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"golden gate"]];
     panoramaView.animationDuration = 10.0f; //Set the duration
     [self.view addSubview:panoramaView];
