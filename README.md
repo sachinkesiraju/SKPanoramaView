@@ -7,7 +7,7 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
-<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Demo%20GIFs/PanoramaViewDemo.gif" width = "320px">
+<img src = "http://i.giphy.com/xIBpvw8sgsUuY.gif" width = "320px">
 
 Note: Demos are significantly slower on the gifs than on an actual simulator
 
@@ -35,7 +35,7 @@ panoramaView.animationDuration = 15.0f; //15 seconds (Default: 10s)
 ```
 Subviews can easily be added to the panorama view to create the effect as shown below
 
-<img src = "https://github.com/sachinkesiraju/SKPanoramaView/blob/master/SKPanoramaViewDemo/Demo%20GIFs/linkedin.gif" width = "320px">
+<img src = "http://i.giphy.com/URBnxjH62DTrO.gif" width = "320px">
 
 By simply using:
 ```
