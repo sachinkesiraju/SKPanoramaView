@@ -7,7 +7,7 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
-<img src = "http://i.giphy.com/xIBpvw8sgsUuY.gif" width = "320px">
+<img src = "http://i.giphy.com/I8yXoOfjBkYZW.gif" width = "320px">
 
 Note: Demos are significantly slower on the gifs than on an actual simulator
 
