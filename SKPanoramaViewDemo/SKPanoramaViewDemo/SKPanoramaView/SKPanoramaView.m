@@ -62,8 +62,6 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
     [_scrollView addSubview:_imageView];
     
     _minimumXOffset = 0;
-    
-    //[self startAnimating];
 }
 
 #pragma mark - Setters
@@ -87,17 +85,16 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
 
 - (void)startAnimating
 {
-    if(!_animationDuration)
-    {
-        _animationDuration = 10.0f; //Default
+    if(!_animationSpeed) {
+        _animationSpeed = 10.0f; //Default: 10 seconds for each full panorama transition
     }
     
     [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
-    _timer = [NSTimer timerWithTimeInterval:SKAnimationUpdateInterval target:self selector:@selector(monitor) userInfo:nil repeats:YES];
+    _timer = [NSTimer timerWithTimeInterval:SKAnimationUpdateInterval target:self selector:@selector(transition) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
 }
 
-- (void) monitor
+- (void) transition
 {
     CGFloat rotationRate = 0.3;
     if (fabs(rotationRate) >= SKRotationMinimumTreshold) {
@@ -107,7 +104,7 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
         } else if (offsetX < _minimumXOffset) {
             offsetX = _minimumXOffset;
         }
-        [UIView animateWithDuration:self.animationDuration
+        [UIView animateWithDuration:self.animationSpeed
                               delay:0.0f
                             options:UIViewAnimationOptionRepeat| UIViewAnimationOptionAutoreverse
                          animations:^{

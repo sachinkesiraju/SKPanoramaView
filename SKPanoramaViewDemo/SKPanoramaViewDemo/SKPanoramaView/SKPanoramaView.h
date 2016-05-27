@@ -10,8 +10,8 @@
 
 @interface SKPanoramaView : UIView
 
-@property (strong, nonatomic) UIImage *image;
-@property (nonatomic) CGFloat animationDuration; //Duration of one image animation (Default: 10s)
+@property (strong, nonatomic) UIImage *image; //Image in the panorama view
+@property (nonatomic) CGFloat animationSpeed; //Duration of one image animation (greater is longer; default:10s)
 
 - (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image;
 

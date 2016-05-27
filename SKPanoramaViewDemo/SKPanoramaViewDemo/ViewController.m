@@ -17,16 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    // Do any additional setup after loading the view, typically from a nib
     [self showStandardAnimation];
-    // [self showLinkedinAnimation]; //uncomment standardAnimation before calling this to avoid to instances of panorama view running at once.
+    //[self showLinkedinAnimation]; //Don't uncomment without removing code from above method
 }
 
 - (void) showLinkedinAnimation
 {
-    //demo adding custom views on top of panorama view
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"new york"]];
-    panoramaView.animationDuration = 60;
+    panoramaView.animationSpeed = 60;
     [self.view addSubview:panoramaView];
     [panoramaView startAnimating];
     UIView *overlayView = [[UIView alloc] initWithFrame:self.view.frame];
@@ -40,9 +39,8 @@
 
 - (void) showStandardAnimation
 {
-    //standard demo
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"golden gate"]];
-    panoramaView.animationDuration = 10.0f; //Set the duration
+    panoramaView.animationSpeed = 10.0f; //Set the speed for each animation transition
     [self.view addSubview:panoramaView];
     [panoramaView startAnimating];
 }
