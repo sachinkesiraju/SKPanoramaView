@@ -9,8 +9,6 @@ Perfect for intro views or background views.
 
 <img src = "http://i.giphy.com/I8yXoOfjBkYZW.gif" width = "320px">
 
-Note: Demos are significantly slower on the gifs than on an actual simulator
-
 <h1> Installation </h1>
 <h3> Cocoapods </h3>
 SKPanoramaView is available through <a href = "cocoapods.org"> Cocoapods</a>. To install it, simply add the following to your Podfile.
@@ -33,6 +31,11 @@ Optionally, you can set the animation duration of the view as follows:
 ```
 panoramaView.animationDuration = 15.0f; //15 seconds (Default: 10s)
 ```
+and set the start position of the animation as follows:
+```
+panoramaView.startPosition = SKPanoramaStartPositionLeft; // (starts animation from either left or right side; default:left)
+```
+
 Subviews can easily be added to the panorama view to create the effect as shown below
 
 <img src = "http://i.giphy.com/URBnxjH62DTrO.gif" width = "320px">
@@ -52,7 +55,7 @@ By simply using:
     [panoramaView addSubview:imageView];
 ```
 
-For more help on how to do this, check out the <a href = "https://github.com/sachinkesiraju/SKPanoramaView/tree/master/SKPanoramaViewDemo"> Demo </a>.
+For more help on how to do this, check out the <a href = "https://github.com/sachinkesiraju/SKPanoramaView/tree/master/SKPanoramaViewDemo"> Demo</a>.
  
 <h1> License </h1>
 SKPanoramaView is available under the MIT License. For more information, see the <a href ="https://github.com/sachinkesiraju/SKPanoramaView/blob/master/LICENSE">LICENSE </a> file.
