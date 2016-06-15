@@ -8,7 +8,6 @@
 
 #import "SKPanoramaView.h"
 
-static const CGFloat SKRotationMinimumTreshold = 0.1f;
 static const CGFloat SKAnimationUpdateInterval = 1 / 100;
 static const CGFloat SKPanoramaRotationFactor = 4.0f;
 
@@ -67,11 +66,6 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
     [_scrollView addSubview:imageView];
     
     _scrollView.contentSize = CGSizeMake(imageView.frame.size.width, _scrollView.frame.size.height);
-    _scrollView.contentOffset = CGPointMake((_scrollView.contentSize.width - _scrollView.frame.size.width), 0);
-    
-    //set constants
-    _minimumXOffset = 0;
-    _maximumXOffset = _scrollView.contentSize.width - _scrollView.frame.size.width;
     _motionRate = _image.size.width / _viewFrame.size.width * SKPanoramaRotationFactor;
 }
 
@@ -83,28 +77,45 @@ static const CGFloat SKPanoramaRotationFactor = 4.0f;
         _animationSpeed = 10.0f; //Default: 10 seconds for each full panorama transition
     }
     
+    //adjust initial offset based on start position
+    if(_startPosition == SKPanoramaStartPositionRight) {
+        _scrollView.contentOffset = CGPointMake((_scrollView.contentSize.width - _scrollView.frame.size.width), 0);
+    }
+    else if(_startPosition == SKPanoramaStartPositionLeft) {
+        _scrollView.contentOffset = CGPointMake(0, 0);
+    }
+    
+    _minimumXOffset = 0;
+    _maximumXOffset = _scrollView.contentSize.width - _scrollView.frame.size.width;
+    
     _timer = [NSTimer timerWithTimeInterval:SKAnimationUpdateInterval target:self selector:@selector(transition) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
 - (void) transition
 {
     CGFloat rotationRate = 0.3;
-    if (fabs(rotationRate) >= SKRotationMinimumTreshold) {
-        CGFloat offsetX = _scrollView.contentOffset.x - rotationRate * _motionRate;
-        if (offsetX > _maximumXOffset) {
-            offsetX = _maximumXOffset;
-        } else if (offsetX < _minimumXOffset) {
-            offsetX = _minimumXOffset;
-        }
-        [UIView animateWithDuration:self.animationSpeed
-                              delay:0.0f
-                            options:UIViewAnimationOptionRepeat| UIViewAnimationOptionAutoreverse| UIViewAnimationCurveEaseInOut
-                         animations:^{
-                             [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
-                         }
-                         completion:nil];
+    CGFloat offsetX = _scrollView.contentOffset.x;
+    if(_startPosition == SKPanoramaStartPositionRight) {
+        offsetX -= rotationRate * _motionRate;
     }
+    else if(_startPosition == SKPanoramaStartPositionLeft) {
+       offsetX += rotationRate * _motionRate;
+    }
+    
+    if (offsetX > _maximumXOffset) {
+        offsetX = _maximumXOffset;
+    } else if (offsetX < _minimumXOffset) {
+        offsetX = _minimumXOffset;
+    }
+    
+    [UIView animateWithDuration:self.animationSpeed
+                          delay:0.0f
+                        options:UIViewAnimationOptionRepeat| UIViewAnimationOptionAutoreverse| UIViewAnimationCurveEaseInOut
+                     animations:^{
+                         [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
+                     }
+                     completion:nil];
 }
 
 - (void) stopAnimating

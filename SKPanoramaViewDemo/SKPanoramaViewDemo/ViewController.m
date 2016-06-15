@@ -41,6 +41,7 @@
 {
     SKPanoramaView *panoramaView = [[SKPanoramaView alloc] initWithFrame:self.view.frame image:[UIImage imageNamed:@"golden gate"]];
     panoramaView.animationSpeed = 10.0f; //Set the speed for each animation transition
+    panoramaView.startPosition = SKPanoramaStartPositionLeft; //Optional: set the start position of the animation (either left or right side; default:left)
     [self.view addSubview:panoramaView];
     [panoramaView startAnimating];
 }
