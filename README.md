@@ -7,7 +7,7 @@ Create beautiful animated panorama views. Inspired by the intro on the LinkedIn 
 
 Perfect for intro views or background views.
 
-<img src = "http://i.giphy.com/I8yXoOfjBkYZW.gif" width = "320px">
+<img src = "http://i.giphy.com/l0IyksnJBNjhQR5Kg.gif" width = "320px">
 
 <h1> Installation </h1>
 <h3> Cocoapods </h3>
